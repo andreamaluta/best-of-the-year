@@ -18,13 +18,17 @@
             <div class="col-12 d-flex justify-content-center">
                 <ul>
                     <div class="box-border">
-                        <li th:each="listItem : ${list}" th:text="${listItem.title}"></li>
+                        <li th:each="listItem : ${list}">
+                            <a th:if="${currentUri == '/movies'}" th:href="@{/movies/{id}(id=${listItem.id})}"
+                                class="nav-link">[[${listItem.title}]]</a>
+                            <a th:if="${currentUri == '/songs'}" th:href="@{/songs/{id}(id=${listItem.id})}"
+                                class="nav-link">[[${listItem.title}]]</a>
+                        </li>
                     </div>
                 </ul>
             </div>
         </div>
     </div>
-
 
     <!-- <th:block th:replace="~{fragments :: scripts}"></th:block> -->
 </body>

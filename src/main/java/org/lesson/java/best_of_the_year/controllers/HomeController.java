@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.websocket.server.PathParam;
 
 @Controller
@@ -55,7 +56,7 @@ public class HomeController {
     }
 
     @GetMapping("/movies")
-    public String getMoviesString(Model model) {
+    public String getMoviesString(Model model, HttpServletRequest req) {
 
         // String movies = "";
 
@@ -69,6 +70,7 @@ public class HomeController {
         // model.addAttribute("names", names);
 
         // return "asString";
+        model.addAttribute("currentUri", req.getRequestURI());
         model.addAttribute("pageTitle", "Best Movie");
 
         List<Movie> list = new ArrayList<Movie>();
@@ -84,7 +86,7 @@ public class HomeController {
     }
 
     @GetMapping("/songs")
-    public String getSongsString(Model model) {
+    public String getSongsString(Model model, HttpServletRequest req) {
 
         // String songs = "";
 
@@ -100,6 +102,7 @@ public class HomeController {
         // return "asString";
 
         model.addAttribute("pageTitle", "Best Song");
+        model.addAttribute("currentUri", req.getRequestURI());
 
         List<Song> list = new ArrayList<Song>();
 
