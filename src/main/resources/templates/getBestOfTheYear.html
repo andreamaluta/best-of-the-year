@@ -3,11 +3,50 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
+    <th:block th:replace="~{fragments :: styles}"></th:block>
+
     <title>Ciao</title>
 </head>
 
 <body>
-    <h1 th:text="'Best of the year by ' + ${name}"></h1>
+
+    <th:block th:replace="~{fragments :: navbar}"></th:block>
+
+    <div class="container">
+        <div class="d-flex justify-content-center flex-column align-items-center">
+
+            <h1 th:text="'Best of by ' + ${name}" class="mt-5 mb-3"></h1>
+
+            <div class="d-flex justify-content-center mb-3 flex-column img-container">
+                <img th:src="@{/images/random.jpg}" alt="logo">
+                <p class="p-border">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus dolore illo
+                    eligendi labore
+                    voluptas
+                    quibusdam rerum dolorum veniam, soluta maxime necessitatibus numquam nam tenetur quas. Deleniti
+                    enim
+                    id
+                    nam
+                    facilis perspiciatis culpa adipisci earum sequi praesentium dolorum amet atque quo itaque, vel
+                    cupiditate.
+                    Quibusdam eos expedita eligendi ducimus cumque perspiciatis voluptatem enim veritatis qui
+                    aliquid
+                    quasi
+                    culpa laudantium molestias amet fugit laboriosam sapiente, consequuntur architecto. Facilis
+                    expedita
+                    molestiae quo dicta iusto, dolores debitis nobis. Hic magni laudantium aliquid ex obcaecati?
+                    Sunt
+                    vel
+                    qui
+                    reiciendis et fugiat facilis autem, cupiditate expedita ut perspiciatis harum, voluptatem
+                    voluptates
+                    a
+                    explicabo laboriosam dolores quae?</p>
+            </div>
+
+        </div>
+    </div>
+
+
 </body>
 
 </html>

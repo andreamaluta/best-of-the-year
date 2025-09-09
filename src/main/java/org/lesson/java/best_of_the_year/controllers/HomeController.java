@@ -57,16 +57,27 @@ public class HomeController {
     @GetMapping("/movies")
     public String getMoviesString(Model model) {
 
-        String movies = "";
+        // String movies = "";
+
+        // for (Movie movie : getBestMovie()) {
+        // movies += movie.getTitle() + ", ";
+        // }
+
+        // String names = movies.substring(0, movies.length() - 2);
+
+        // // model.addAttribute("title", "Movie");
+        // model.addAttribute("names", names);
+
+        // return "asString";
+        model.addAttribute("pageTitle", "Best Movie");
+
+        List<Movie> list = new ArrayList<Movie>();
 
         for (Movie movie : getBestMovie()) {
-            movies += movie.getTitle() + ", ";
+            list.add(movie);
         }
 
-        String names = movies.substring(0, movies.length() - 2);
-
-        // model.addAttribute("title", "Movie");
-        model.addAttribute("names", names);
+        model.addAttribute("list", list);
 
         return "asString";
 
@@ -75,16 +86,28 @@ public class HomeController {
     @GetMapping("/songs")
     public String getSongsString(Model model) {
 
-        String songs = "";
+        // String songs = "";
+
+        // for (Song song : getBestSongs()) {
+        // songs += song.getTitle() + ", ";
+        // }
+
+        // String names = songs.substring(0, songs.length() - 2);
+
+        // // model.addAttribute("title", "song");
+        // model.addAttribute("names", names);
+
+        // return "asString";
+
+        model.addAttribute("pageTitle", "Best Song");
+
+        List<Song> list = new ArrayList<Song>();
 
         for (Song song : getBestSongs()) {
-            songs += song.getTitle() + ", ";
+            list.add(song);
         }
 
-        String names = songs.substring(0, songs.length() - 2);
-
-        // model.addAttribute("title", "song");
-        model.addAttribute("names", names);
+        model.addAttribute("list", list);
 
         return "asString";
 

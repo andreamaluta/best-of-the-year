@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <th:block th:fragment="styles">
+        <link th:href="@{/webjars/bootstrap/5.3.8/css/bootstrap.min.css}" th:rel="stylesheet" />
+        <link th:rel="stylesheet" th:href="@{/style.css}">
+    </th:block>
+
+</head>
+
+<body>
+
+    <div th:fragment="navbar" class="container pt-3">
+        <div class="row">
+            <div class="col-2 p-4 border-nav">
+                <a th:href="@{/?name=andrea}" class="nav-link">
+                    Best of
+                </a>
+            </div>
+            <div class="col-10 p-4 border-nav border-start-0">
+
+                <a th:href="@{/movies}" class="nav-link">
+                    <div class="btn-css me-3">
+                        Movie
+                    </div>
+                </a>
+                <a th:href="@{/songs}" class="nav-link">
+                    <div class="btn-css me-3">
+                        Song
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <th:block th:fragment="scripts">
+        <script th:src="@{/webjars/bootstrap/5.3.8/js/bootstrap.bundle.min.js}"></script>
+    </th:block>
+
+</body>
+
+</html>

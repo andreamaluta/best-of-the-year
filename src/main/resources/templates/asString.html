@@ -1,15 +1,32 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
-</html>
-<html lang="en">
-
 <head>
+    <th:block th:replace="~{fragments :: styles}"></th:block>
     <title>Document</title>
 </head>
 
 <body>
-    <p th:text="${names}"></p>
+
+    <th:block th:replace="~{fragments :: navbar}"></th:block>
+
+    <div class="container">
+
+        <h1 th:text="${pageTitle}" class="text-center mt-3"></h1>
+
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center">
+                <ul>
+                    <div class="box-border">
+                        <li th:each="listItem : ${list}" th:text="${listItem.title}"></li>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- <th:block th:replace="~{fragments :: scripts}"></th:block> -->
 </body>
 
 </html>

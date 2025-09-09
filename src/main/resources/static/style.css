@@ -1,0 +1,38 @@
+.border-nav {
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+}
+
+.btn-css {
+    border: 1px solid black;
+    background-color: transparent;
+    border-radius: 5px;
+    padding: 5px 30px;
+}
+
+.box-border {
+    border: 1px solid black;
+}
+
+ul {
+    padding: 30px 0;
+}
+
+ul li {
+    padding: 15px;
+    border: 1px solid black;
+    list-style: none;
+    text-align: center;
+    font-size: 20px;
+}
+
+.img-container {
+    max-width: 600px;
+}
+
+.p-border {
+    border: 1px solid black;
+    padding: 10px;
+}
